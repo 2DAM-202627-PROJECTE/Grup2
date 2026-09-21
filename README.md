@@ -16,6 +16,6 @@
 
 ## Estat del Projecte
 
-Aquest projecte es troba actualment en **fase de planificació i desenvolupament inicial**. La arquitectura i el stack tecnològic definitiu s'aniran actualizant en aquest document en mesura que s'aniran definint.
+Aquest projecte es troba actualment en **fase de planificació i desenvolupament inicial**. L'arquitectura i l'stack tecnològic definitiu s'aniran actualizant en aquest document en mesura que s'aniran definint.
 
 ---
