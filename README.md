@@ -8,8 +8,8 @@
 
 - Reproducció de àudio en alta qualitat.
 - Busqueda de artistes, àlbums i cançons.
-- Creación y gestión de listas de reproducción (*playlists*).
-- Recomenacions personalitzades segons els teus gusts.
+- Creació i gestió de llistas de reproducció (*playlists*).
+- Recomenacions personalitzades segons els teus gustos.
 - Mode sense connexió per escoltar les teves descàrregues.
 
 ---
