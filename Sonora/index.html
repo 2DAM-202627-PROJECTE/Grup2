@@ -8,6 +8,16 @@
     <title>sonora</title>
   </head>
   <body>
-    <h1 class="text-5xl font-bold underline">AIXÒ FUNCIONA</h1>
+    <header class="bg-white" x-data="{menuOpen: false}">
+      <div class="flex lg:hidden">
+        <button @click="menuOpen=true" type="button" class="-m-2.5 inline-flex items-center
+        justify-center rounded-md p-2.5 text-gray-700">
+        <button @click="menuOpen=false" type="button" class="-m-2.5 rounded-md p-2.5
+        text-gray-700">
+        <span class="sr-only">Close menu</span>
+
+
+      <div x-show="menuOpen" class="lg:hidden" role="dialog" aria-modal="true">
+    </header>
   </body>
 </html>
