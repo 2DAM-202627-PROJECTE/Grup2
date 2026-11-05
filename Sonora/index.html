@@ -5,13 +5,33 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/src/style.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
     <title>sonora</title>
   </head>
   <body>
     <header class="bg-white" x-data="{menuOpen: false}">
-      <header>
+      <div>
+        <nav>
+            <img src="" alt="">
+            <div class="dropdown" x-data="{ obert: false }" @click.outside="obert = false">
+                <button @click="obert = !obert">Busqueda ▾</button>
+                <ul x-show="obert" x-cloak>
+                    <li @click="obert = false">Hero section</li>
+                    <li @click="obert = false">Plans i Preus</li>
+                    <li @click="obert = false">About Us</li>
+                    <li @click="obert = false">FAQ</li>
+                    <li @click="obert = false">Newsletter</li>
+                    <li @click="obert = false">CTA section</li>
+                </ul>
+            </div>
+            <a href="#">Descarrega la nostra aplicació</a>
+            <a href="#">Perfil</a>
+            <a href="#">FAQ</a>
+        </nav>
+      </div>      
+    </header>
+
         <h1>MÚSICA SENSE LÍMITS, SIGUIS ON SIGUIS</h1>
-        </header>
         <p>Nota el ritme en cada moment.</p>
         <p>Cançons, podcasts i playlists personalitzades.</p>
         <p>Sense interrupcions, sense límits.</p>
@@ -20,11 +40,8 @@
         <li><a href="index.html">[ VEURE PLANS ]</a></li>
 
         <img src="" alt="">
-    </header>
 
-    <header>
-            <h1>PLANS I PREUS</h1>
-        </header>
+        <h1>PLANS I PREUS</h1>
         <div class="free">
             <p>FREE</p>
             <p>Escucha con anuncios.
