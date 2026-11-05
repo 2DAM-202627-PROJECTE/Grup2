@@ -5,19 +5,30 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/src/style.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
     <title>sonora</title>
   </head>
   <body>
     <header class="bg-white" x-data="{menuOpen: false}">
-      <div class="flex lg:hidden">
-        <button @click="menuOpen=true" type="button" class="-m-2.5 inline-flex items-center
-        justify-center rounded-md p-2.5 text-gray-700">
-        <button @click="menuOpen=false" type="button" class="-m-2.5 rounded-md p-2.5
-        text-gray-700">
-        <span class="sr-only">Close menu</span>
-
-
-      <div x-show="menuOpen" class="lg:hidden" role="dialog" aria-modal="true">
+      <div>
+        <nav>
+            <img src="" alt="">
+            <div class="dropdown" x-data="{ obert: false }" @click.outside="obert = false">
+                <button @click="obert = !obert">Busqueda ▾</button>
+                <ul x-show="obert" x-cloak>
+                    <li @click="obert = false">Hero section</li>
+                    <li @click="obert = false">Plans i Preus</li>
+                    <li @click="obert = false">About Us</li>
+                    <li @click="obert = false">FAQ</li>
+                    <li @click="obert = false">Newsletter</li>
+                    <li @click="obert = false">CTA section</li>
+                </ul>
+            </div>
+            <a href="#">Descarrega la nostra aplicació</a>
+            <a href="#">Perfil</a>
+            <a href="#">FAQ</a>
+        </nav>
+      </div>
     </header>
   </body>
 </html>
