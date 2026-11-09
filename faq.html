@@ -1,1 +1,79 @@
-<!doctype html><html lang="ca"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Respostes ràpides sobre el compte, l’ús, els preus i el suport de Marca."><title>Preguntes freqüents — Marca</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"></head><body x-data="siteUI"><header class="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl"><div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"><a href="index.html" class="font-display text-2xl font-bold">marca<span class="text-primary">.</span></a><nav class="hidden items-center gap-8 md:flex"><a href="index.html" class="text-sm text-muted hover:text-primary">Inici</a><a href="about.html" class="text-sm text-muted hover:text-primary">Sobre nosaltres</a><a href="faq.html" class="text-sm text-muted hover:text-primary">FAQ</a><a href="guia-estil.html" class="text-sm text-muted hover:text-primary">Guia d'estil</a></nav><div class="hidden items-center gap-5 md:flex"><a href="login.html" class="text-sm">Iniciar sessió</a><a href="register.html" class="btn-primary !px-5 !py-2.5">Registra't</a></div><button class="text-primary md:hidden" @click="menuOpen=!menuOpen" aria-label="Obrir menú"><span x-text="menuOpen?'✕':'☰'"></span></button></div><nav x-show="menuOpen" class="border-t border-border px-6 py-5 md:hidden"><div class="flex flex-col gap-4"><a href="index.html">Inici</a><a href="about.html">Sobre nosaltres</a><a href="faq.html">FAQ</a><a href="guia-estil.html">Guia d'estil</a><a href="login.html">Iniciar sessió</a><a href="register.html" class="btn-primary">Registra't</a></div></nav></header><main><section class="hero-glow mx-auto max-w-3xl px-6 py-20"><h1 class="text-4xl font-bold uppercase sm:text-5xl">Preguntes freqüents</h1><p class="mt-4 text-muted">Troba la resposta ràpida a tot el que necessites saber.</p><div class="mt-14 space-y-10"><template x-for="cat in [{name:'Compte',items:[['Com creo un compte?','Accedeix a la pàgina de registre, introdueix les teves dades i segueix les instruccions.'],['Puc fer servir el compte en diversos dispositius?','Sí, pots accedir al teu compte des de qualsevol dispositiu compatible.'],['Com canvio la contrasenya?','Ves a la configuració del compte i selecciona l’opció de canviar la contrasenya.']]},{name:'Ús de l’app',items:[['Quines són les funcions principals?','Pots organitzar continguts, fer cerques i personalitzar el teu espai.'],['Funciona sense connexió?','Algunes funcions bàsiques poden estar disponibles sense connexió.']]},{name:'Preus',items:[['El pla Bàsic té cost?','No, el pla Bàsic és gratuït i inclou les funcions essencials.'],['Puc cancel·lar quan vulgui?','Sí, pots gestionar o cancel·lar la subscripció des del teu compte.']]},{name:'Suport',items:[['Com contacto amb l’equip?','Pots contactar amb nosaltres mitjançant el formulari o el correu de suport.']]}]"><div><h2 class="text-sm font-semibold uppercase tracking-widest text-mint" x-text="cat.name"></h2><div class="mt-5 space-y-3"><template x-for="(item,i) in cat.items"><article class="card-surface overflow-hidden"><button class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left" @click="toggleFaq(cat.name.toLowerCase()+'-'+i)"><span class="font-display font-semibold" x-text="item[0]"></span><span class="text-primary transition-transform" :class="openFaq===cat.name.toLowerCase()+'-'+i?'rotate-180':''">⌄</span></button><p x-show="openFaq===cat.name.toLowerCase()+'-'+i" x-transition class="px-6 pb-5 text-sm leading-relaxed text-muted" x-text="item[1]"></p></article></template></div></div></template></div><div class="card-surface mt-16 p-8 text-center"><h2 class="text-2xl font-bold">Encara tens dubtes?</h2><p class="mt-2 text-sm text-muted">Estarem encantats d'ajudar-te.</p><a href="mailto:info@example.com" class="btn-primary mt-6">Contacta amb nosaltres</a></div></section></main><footer class="border-t border-border"><div class="mx-auto max-w-7xl px-6 py-12"><a href="index.html" class="font-display text-2xl font-bold">marca<span class="text-primary">.</span></a><p class="mt-3 text-sm text-muted">El teu eslògan curt i memorable.</p><div class="mt-8 flex flex-wrap gap-6 text-sm text-muted"><a href="index.html">Inici</a><a href="about.html">Sobre nosaltres</a><a href="faq.html">FAQ</a><a href="guia-estil.html">Guia d'estil</a><a href="login.html">Iniciar sessió</a><a href="register.html">Registra't</a></div><div class="mt-10 border-t border-border pt-6 text-xs text-muted">© 2026 Marca. Tots els drets reservats.</div></div></footer><script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script><script type="module" src="/src/main.js"></script></body></html>
+<!doctype html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Respostes ràpides sobre el compte, l’ús, els preus i el suport de Marca.">
+    <title>Preguntes freqüents — Marca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body x-data="siteUI">
+    <header class="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"><a href="index.html"
+                class="font-display text-2xl font-bold">marca<span class="text-primary">.</span></a>
+            <nav class="hidden items-center gap-8 md:flex"><a href="index.html"
+                    class="text-sm text-muted hover:text-primary">Inici</a><a href="about.html"
+                    class="text-sm text-muted hover:text-primary">Sobre nosaltres</a><a href="faq.html"
+                    class="text-sm text-muted hover:text-primary">FAQ</a><a href="guia-estil.html"
+                    class="text-sm text-muted hover:text-primary">Guia d'estil</a></nav>
+            <div class="hidden items-center gap-5 md:flex"><a href="login.html" class="text-sm">Iniciar sessió</a><a
+                    href="register.html" class="btn-primary !px-5 !py-2.5">Registra't</a></div><button
+                class="text-primary md:hidden" @click="menuOpen=!menuOpen" aria-label="Obrir menú"><span
+                    x-text="menuOpen?'✕':'☰'"></span></button>
+        </div>
+        <nav x-show="menuOpen" class="border-t border-border px-6 py-5 md:hidden">
+            <div class="flex flex-col gap-4"><a href="index.html">Inici</a><a href="about.html">Sobre nosaltres</a><a
+                    href="faq.html">FAQ</a><a href="guia-estil.html">Guia d'estil</a><a href="login.html">Iniciar
+                    sessió</a><a href="register.html" class="btn-primary">Registra't</a></div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-glow mx-auto max-w-3xl px-6 py-20">
+            <h1 class="text-4xl font-bold uppercase sm:text-5xl">Preguntes freqüents</h1>
+            <p class="mt-4 text-muted">Troba la resposta ràpida a tot el que necessites saber.</p>
+            <div class="mt-14 space-y-10"><template
+                    x-for="cat in [{name:'Compte',items:[['Com creo un compte?','Accedeix a la pàgina de registre, introdueix les teves dades i segueix les instruccions.'],['Puc fer servir el compte en diversos dispositius?','Sí, pots accedir al teu compte des de qualsevol dispositiu compatible.'],['Com canvio la contrasenya?','Ves a la configuració del compte i selecciona l’opció de canviar la contrasenya.']]},{name:'Ús de l’app',items:[['Quines són les funcions principals?','Pots organitzar continguts, fer cerques i personalitzar el teu espai.'],['Funciona sense connexió?','Algunes funcions bàsiques poden estar disponibles sense connexió.']]},{name:'Preus',items:[['El pla Bàsic té cost?','No, el pla Bàsic és gratuït i inclou les funcions essencials.'],['Puc cancel·lar quan vulgui?','Sí, pots gestionar o cancel·lar la subscripció des del teu compte.']]},{name:'Suport',items:[['Com contacto amb l’equip?','Pots contactar amb nosaltres mitjançant el formulari o el correu de suport.']]}]">
+                    <div>
+                        <h2 class="text-sm font-semibold uppercase tracking-widest text-mint" x-text="cat.name"></h2>
+                        <div class="mt-5 space-y-3"><template x-for="(item,i) in cat.items">
+                                <article class="card-surface overflow-hidden"><button
+                                        class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                                        @click="toggleFaq(cat.name.toLowerCase()+'-'+i)"><span
+                                            class="font-display font-semibold" x-text="item[0]"></span><span
+                                            class="text-primary transition-transform"
+                                            :class="openFaq===cat.name.toLowerCase()+'-'+i?'rotate-180':''">⌄</span></button>
+                                    <p x-show="openFaq===cat.name.toLowerCase()+'-'+i" x-transition
+                                        class="px-6 pb-5 text-sm leading-relaxed text-muted" x-text="item[1]"></p>
+                                </article>
+                            </template></div>
+                    </div>
+                </template></div>
+            <div class="card-surface mt-16 p-8 text-center">
+                <h2 class="text-2xl font-bold">Encara tens dubtes?</h2>
+                <p class="mt-2 text-sm text-muted">Estarem encantats d'ajudar-te.</p><a href="mailto:info@example.com"
+                    class="btn-primary mt-6">Contacta amb nosaltres</a>
+            </div>
+        </section>
+    </main>
+    <footer class="border-t border-border">
+        <div class="mx-auto max-w-7xl px-6 py-12"><a href="index.html"
+                class="font-display text-2xl font-bold">marca<span class="text-primary">.</span></a>
+            <p class="mt-3 text-sm text-muted">El teu eslògan curt i memorable.</p>
+            <div class="mt-8 flex flex-wrap gap-6 text-sm text-muted"><a href="index.html">Inici</a><a
+                    href="about.html">Sobre nosaltres</a><a href="faq.html">FAQ</a><a href="guia-estil.html">Guia
+                    d'estil</a><a href="login.html">Iniciar sessió</a><a href="register.html">Registra't</a></div>
+            <div class="mt-10 border-t border-border pt-6 text-xs text-muted">© 2026 Marca. Tots els drets reservats.
+            </div>
+        </div>
+    </footer>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
