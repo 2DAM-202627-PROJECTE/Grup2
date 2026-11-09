@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  base: '/2DAM-202627-PROJECTE/Grup2/',
   plugins: [tailwindcss()],
   build: {
     rollupOptions: {
