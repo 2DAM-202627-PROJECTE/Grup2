@@ -1,10 +1,9 @@
-import './style.css'
-import heroImg from './assets/hero.png'
-import javascriptLogo from './assets/javascript.svg'
-import viteLogo from './assets/vite.svg'
-import { setupCounter } from './counter.js'
-import Alpine from 'alpinejs'
- 
-window.Alpine = Alpine
+import './styles.css'
 
-Alpine.start()
+window.siteUI = () => ({
+  menuOpen: false,
+  openFaq: 'compte-0',
+  newsletterDone: false,
+  formDone: false,
+  toggleFaq(id) { this.openFaq = this.openFaq === id ? null : id },
+})
