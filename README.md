@@ -20,10 +20,11 @@ npm run preview
 
 ## Estructura
 - `index.html`: landing principal.
-- `about.html`, `faq.html`, `guia-estil.html`, `login.html`, `register.html`: pàgines addicionals.
+- `about.html`, `faq.html`, `login.html`, `register.html`: pàgines addicionals.
 - `src/main.js`: inicialització d'Alpine.js i comportaments interactius.
+- `src/plantilles/header.html`, `src/plantilles/footer.html`: header i footer compartits, injectats a cada pàgina amb `<!-- include:header -->` i `<!-- include:footer -->`.
 - `src/styles.css`: Tailwind CSS v4 i estils globals.
-- `vite.config.js`: configuració de Vite i Tailwind.
+- `vite.config.js`: configuració de Vite, Tailwind i el plugin d'includes.
 - `public/wave.jpg`: recurs gràfic de la plantilla.
 
 Els formularis són demostratius: mostren un missatge de confirmació, però no envien dades a cap servidor.
