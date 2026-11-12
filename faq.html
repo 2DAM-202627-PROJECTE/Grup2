@@ -16,7 +16,8 @@
 <body x-data="siteUI">
     <!-- include:header -->
     <main>
-        <section class="hero-glow mx-auto max-w-3xl px-6 py-20">
+        <section class="hero-glow">
+            <div class="mx-auto max-w-3xl px-6 py-20">
             <h1 class="text-4xl font-bold uppercase sm:text-5xl">Preguntes freqüents</h1>
             <p class="mt-4 text-muted">Troba la resposta ràpida a tot el que necessites saber.</p>
             <div class="mt-14 space-y-10"><template
@@ -24,14 +25,21 @@
                     <div>
                         <h2 class="text-sm font-semibold uppercase tracking-widest text-mint" x-text="cat.name"></h2>
                         <div class="mt-5 space-y-3"><template x-for="(item,i) in cat.items">
-                                <article class="card-surface overflow-hidden"><button
-                                        class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
-                                        @click="toggleFaq(cat.name.toLowerCase()+'-'+i)"><span
-                                            class="font-display font-semibold" x-text="item[0]"></span><span
-                                            class="text-primary transition-transform"
-                                            :class="openFaq===cat.name.toLowerCase()+'-'+i?'rotate-180':''">⌄</span></button>
-                                    <p x-show="openFaq===cat.name.toLowerCase()+'-'+i" x-transition
-                                        class="px-6 pb-5 text-sm leading-relaxed text-muted" x-text="item[1]"></p>
+                                <article class="card-surface overflow-hidden">
+                                    <button type="button"
+                                        class="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-secondary/40"
+                                        @click="toggleFaq(cat.name.toLowerCase()+'-'+i)"
+                                        :aria-expanded="openFaq===cat.name.toLowerCase()+'-'+i">
+                                        <span class="font-display font-semibold" x-text="item[0]"></span>
+                                        <span class="text-primary transition-transform duration-300"
+                                            :class="openFaq===cat.name.toLowerCase()+'-'+i?'rotate-180':''">⌄</span>
+                                    </button>
+                                    <div x-cloak class="grid transition-[grid-template-rows] duration-300 ease-out"
+                                        :class="openFaq===cat.name.toLowerCase()+'-'+i?'grid-rows-[1fr]':'grid-rows-[0fr]'">
+                                        <div class="min-h-0 overflow-hidden">
+                                            <p class="px-6 pb-5 text-sm leading-relaxed text-muted" x-text="item[1]"></p>
+                                        </div>
+                                    </div>
                                 </article>
                             </template></div>
                     </div>
@@ -41,10 +49,10 @@
                 <p class="mt-2 text-sm text-muted">Estarem encantats d'ajudar-te.</p><a href="contacte.html"
                     class="btn-primary mt-6">Contacta amb nosaltres</a>
             </div>
+            </div>
         </section>
     </main>
     <!-- include:footer -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
     <script type="module" src="/src/main.js"></script>
 </body>
 
