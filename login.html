@@ -16,8 +16,8 @@
 <body x-data="siteUI">
     <!-- include:header -->
     <main>
-        <section class="hero-glow relative mx-auto flex max-w-md flex-col px-6 py-20">
-            <div class="mb-6 text-center text-5xl text-primary">✦</div>
+        <section class="hero-glow">
+            <div class="mx-auto flex max-w-md flex-col px-6 py-20">
             <h1 class="text-center text-3xl font-bold">Inicia sessió</h1>
             <p class="mt-2 text-center text-sm text-muted">Accedeix al teu espai personal.</p>
             <form class="card-surface mt-10 space-y-5 p-8" @submit.prevent="formDone=true"><label class="block"><span
@@ -33,10 +33,10 @@
             </form>
             <p class="mt-6 text-center text-sm text-muted">No tens compte? <a href="register.html"
                     class="text-primary hover:underline">Registra’t</a></p>
+            </div>
         </section>
     </main>
     <!-- include:footer -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
     <script type="module" src="/src/main.js"></script>
 </body>
 

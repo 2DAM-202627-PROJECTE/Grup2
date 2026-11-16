@@ -47,6 +47,10 @@ h3 {
   border-radius: 1.25rem;
 }
 
+[x-cloak] {
+  display: none !important;
+}
+
 .btn-base {
   display: inline-flex;
   align-items: center;
