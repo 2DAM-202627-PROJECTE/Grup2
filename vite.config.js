@@ -43,7 +43,7 @@ export default defineConfig({
         contacte: 'contacte.html',
         login: 'login.html',
         register: 'register.html',
-        politicacookies: 'politica-cookies.html'
+        politica_cookies: 'politica_cookies.html'
       },
     },
   },
