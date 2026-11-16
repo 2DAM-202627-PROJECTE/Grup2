@@ -17,7 +17,7 @@ There are no test, lint, or typecheck scripts. Do not invent or run them; verify
 
 - **Every page must be listed in `vite.config.js` under `build.rollupOptions.input`** or it is silently excluded from `dist/` and GitHub Pages. `contacte.html` is currently linked from the nav but empty and not listed.
 - `base: '/Grup2/'` applies in dev too, so use the `/Grup2/` URL, not the server root. Keep it in sync with the GitHub repo name (`2DAM-202627-PROJECTE/Grup2`).
-- Alpine.js is loaded from a pinned CDN `<script>` in each HTML file (`3.14.9`), not from npm. It is not in `package.json`; do not add an npm Alpine import.
+- Alpine.js is loaded from a pinned CDN inside `src/main.js` (`3.14.9`) after `window.siteUI` is defined, so it can initialise `x-data="siteUI"`. Do not add a separate Alpine `<script>` to pages (it starts before `siteUI` exists) or an npm Alpine import.
 - `src/main.js` only imports CSS and defines `window.siteUI()`, referenced as `<body x-data="siteUI">`. Put new shared reactive state/methods in that object; page markup reads it directly.
 - Header and footer are shared templates: edit `src/plantilles/header.html` / `footer.html`, not the rendered markup in each page. Pages use `<!-- include:header -->` and `<!-- include:footer -->`; a custom Vite plugin (`htmlPlantilles` in `vite.config.js`) injects them in dev and build.
 - Shared assets: `public/*` is served at the base root (use `/wave.jpg`); `src/assets/*` is referenced by relative path in HTML and processed by Vite.

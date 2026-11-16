@@ -40,6 +40,7 @@ export default defineConfig({
         main: 'index.html',
         about: 'about.html',
         faq: 'faq.html',
+        contacte: 'contacte.html',
         login: 'login.html',
         register: 'register.html',
       },
