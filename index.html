@@ -31,21 +31,26 @@
                         <div class="pointer-events-none absolute h-[420px] w-[420px] rounded-full bg-primary/15 blur-3xl"></div>
                 
                         <!-- MÒBIL -->
-                        <div id="phone" class="card-surface relative w-[300px] rounded-[2.5rem] p-3 shadow-2xl"
-                            style="height:min(640px,88vh)">
+                        <div id="phone" class="card-surface relative w-[300px] rounded-[2.5rem] p-3 shadow-2xl" style="height:min(640px,88vh)">
                             <div class="absolute left-1/2 top-4 z-20 h-5 w-24 -translate-x-1/2 rounded-full bg-black"></div>
-                
+                        
                             <!-- PANTALLA -->
                             <div class="relative h-full overflow-hidden rounded-[2rem] bg-secondary">
-                
-                                <!-- Món 3D (els vinils volen cap a tu) -->
-                                <div id="scene"></div>
-                
-                                <!-- Capçalera -->
-                                <div class="absolute inset-x-0 top-0 z-10 flex items-center justify-between px-4 pt-10">
+                        
+                                <!-- Tira de vinils (es crea amb JS) -->
+                                <div id="viewport">
+                                    <div id="strip"></div>
+                                </div>
+                        
+                                <!-- Capçalera fixa -->
+                                <div
+                                    class="absolute inset-x-0 top-0 z-10 flex items-center justify-between bg-gradient-to-b from-secondary via-secondary/80 to-transparent px-4 pb-6 pt-10">
                                     <span class="font-bold">Sonora<span class="text-primary">.</span></span>
                                     <span id="hud-count" class="rounded-full bg-mint/15 px-3 py-1 text-xs text-mint">01 / 07</span>
                                 </div>
+                        
+                                <!-- Punts laterals -->
+                                <div id="dots" class="absolute right-2 top-1/2 z-10 flex -translate-y-1/2 flex-col items-center gap-1.5"></div>
                 
                                 <!-- HUD inferior: nom + àlbum del vinil actual -->
                                 <div
@@ -62,46 +67,11 @@
                         </div>
                     </div>
                 </section>
-                <section id="stage">
-                    <div class="relative flex justify-center">
-                        <div class="pointer-events-none absolute inset-0 rounded-full bg-primary/15 blur-3xl"></div>
                 
-                        <!-- MÒBIL -->
-                        <div id="phone" class="card-surface relative w-[300px] rounded-[2.5rem] p-3 shadow-2xl"
-                            style="height:min(640px,88vh)">
-                            <div class="absolute left-1/2 top-4 z-20 h-5 w-24 -translate-x-1/2 rounded-full bg-black"></div>
-                
-                            <!-- PANTALLA -->
-                            <div class="relative h-full overflow-hidden rounded-[2rem] bg-secondary">
-                
-                                <!-- Tira de vinils (es crea amb JS) -->
-                                <div id="viewport">
-                                    <div id="strip"></div>
-                                </div>
-                
-                                <!-- Capçalera fixa -->
-                                <div
-                                    class="absolute inset-x-0 top-0 z-10 flex items-center justify-between bg-gradient-to-b from-secondary via-secondary/80 to-transparent px-4 pb-6 pt-10">
-                                    <span class="font-bold">Sonora<span class="text-primary">.</span></span>
-                                    <span id="hud-count" class="rounded-full bg-mint/15 px-3 py-1 text-xs text-mint">01 / 07</span>
-                                </div>
-                
-                                <!-- Punts laterals -->
-                                <div id="dots"
-                                    class="absolute right-2 top-1/2 z-10 flex -translate-y-1/2 flex-col items-center gap-1.5"></div>
-                
-                                <!-- Pista -->
-                                <p id="hint"
-                                    class="pointer-events-none absolute inset-x-0 bottom-4 z-10 text-center text-[10px] uppercase tracking-widest text-muted transition-opacity">
-                                    Fes scroll ↓</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
                 
                 <script>
                     /* =====================================================
-                       ✏️  EDITA AQUÍ ELS TEUS 7 VINILS
+                       EDITA AQUÍ ELS TEUS 7 VINILS
                        img  → ruta de la foto (quadrada va millor)
                        name → nom de l'artista / vinil
                        album → nom de l'àlbum
@@ -132,20 +102,18 @@
 
                     /* ---------- Crea les "publicacions" ---------- */
                     const slides = VINYLS.map((v, i) => {
-                        const s = document.createElement('div');
-                        s.className = 'slide';
+                    const s = document.createElement('div');
+                        s.className = 'slide flex items-center justify-center px-6 pb-60 pt-16';
                         s.innerHTML = `
-                    <div class="content">
-                      <div class="vinyl-wrap">
-                        <div class="disc">
-                          <img src="${v.img}" alt="${v.album}" onerror="this.style.display='none'">
-                          <div class="grooves"></div><div class="shine"></div>
-                          <div class="label"></div><div class="hole"></div>
+                        <div class="content flex w-full flex-col items-center">
+                        <div class="vinyl-wrap mx-auto w-[180px]">
+                            <div class="disc">
+                            <img src="${v.img}" alt="${v.album}" onerror="this.style.display='none'">
+                            <div class="grooves"></div><div class="shine"></div>
+                            <div class="label"></div><div class="hole"></div>
+                            </div>
                         </div>
-                      </div>
-                      <p class="mt-6 text-xl font-bold">${v.name}</p>
-                      <p class="mt-1 text-sm text-primary">${v.album}</p>
-                    </div>`;
+                        </div>`;
                         strip.appendChild(s);
 
                         const d = document.createElement('button');
