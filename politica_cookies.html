@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de cookies de Sonora.">
+    <title>Política de cookies · Sonora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body x-data="siteUI">
+    <!-- include:header -->
+    <main>
+        <section class="hero-glow relative overflow-hidden border-b border-border">
+            <div class="mx-auto max-w-3xl px-6 py-16 lg:py-20">
+                <a href="index.html" class="text-sm font-semibold text-primary hover:underline">&larr; Tornar a
+                    l'inici</a>
+                <h1 class="mt-6 text-4xl font-bold uppercase leading-tight tracking-tight sm:text-5xl">
+                    Política de <span class="text-gradient">cookies</span>
+                </h1>
+                <p class="mt-4 text-sm text-muted">Última actualització: 16/11/2026</p>
+            </div>
+        </section>
+
+        <section class="mx-auto max-w-3xl space-y-12 px-6 py-16">
+            <div>
+                <h2 class="text-2xl font-bold">Què són les cookies?</h2>
+                <p class="mt-3 text-muted">
+                    Les cookies són petits fitxers que el web desa al teu dispositiu per recordar
+                    informació o analitzar com s'utilitza el lloc.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-bold">Qui és el responsable?</h2>
+                <p class="mt-3 text-muted">
+                    Sonora, Institut de l'Ebre Av. Colom 34-42 43500 Tortosa, correu de contacte: sonorasenselimits@gmail.com .
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-bold">Cookies que fem servir</h2>
+                <div class="card-surface mt-5 overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-secondary text-xs uppercase tracking-widest text-primary">
+                            <tr>
+                                <th class="p-4 font-semibold">Nom</th>
+                                <th class="p-4 font-semibold">Propietari</th>
+                                <th class="p-4 font-semibold">Finalitat</th>
+                                <th class="p-4 font-semibold">Durada</th>
+                                <th class="p-4 font-semibold">Tipus</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-muted">
+                            <tr class="border-t border-border">
+                                <td class="p-4">cookie-consent (localStorage)</td>
+                                <td class="p-4">Pròpia</td>
+                                <td class="p-4">Recordar la teva decisió sobre les cookies</td>
+                                <td class="p-4">Fins que l'esborris</td>
+                                <td class="p-4"><span
+                                        class="rounded-full bg-mint/15 px-3 py-1 text-xs text-mint">Tècnica</span></td>
+                            </tr>
+                            <tr class="border-t border-border">
+                                <td class="p-4">_ga, _ga_*</td>
+                                <td class="p-4">Google</td>
+                                <td class="p-4">Estadístiques d'ús del web</td>
+                                <td class="p-4">2 anys</td>
+                                <td class="p-4"><span
+                                        class="rounded-full bg-primary/15 px-3 py-1 text-xs text-primary">Analítica
+                                        (requereix consentiment)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card-surface p-8">
+                <h2 class="text-2xl font-bold">Com canviar o retirar el consentiment</h2>
+                <p class="mt-3 text-muted">Pots modificar la teva decisió en qualsevol moment:</p>
+                <button type="button" onclick="window.dispatchEvent(new Event('open-cookies'))"
+                    class="btn-primary mt-6">
+                    Configurar cookies
+                </button>
+                <p class="mt-6 text-sm text-muted">
+                    També pots esborrar-les des de la configuració del teu navegador
+                    (Chrome, Firefox, Safari, Edge).
+                </p>
+            </div>
+        </section>
+    </main>
+    <!-- include:footer -->
+    <script defer src="cookies.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
