@@ -4,8 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Respostes ràpides sobre el compte, l’ús, els preus i el suport de Marca.">
-    <title>Preguntes freqüents — Marca</title>
+    <meta name="description" content="Respostes ràpides sobre el compte, l’ús, els preus i el suport de Sonora.">
+    <title>Preguntes freqüents — Sonora</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://2dam-202627-projecte.github.io/Grup2/faq.html">
+    <meta name="theme-color" content="#211e25">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sonora">
+    <meta property="og:locale" content="ca_ES">
+    <meta property="og:title" content="Preguntes freqüents — Sonora">
+    <meta property="og:description" content="Respostes ràpides sobre el compte, l’ús, els preus i el suport de Sonora.">
+    <meta property="og:url" content="https://2dam-202627-projecte.github.io/Grup2/faq.html">
+    <meta property="og:image" content="https://2dam-202627-projecte.github.io/Grup2/wave.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Preguntes freqüents — Sonora">
+    <meta name="twitter:description" content="Respostes ràpides sobre el compte, l’ús, els preus i el suport de Sonora.">
+    <meta name="twitter:image" content="https://2dam-202627-projecte.github.io/Grup2/wave.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,27 +29,30 @@
 
 <body x-data="siteUI">
     <!-- include:header -->
-    <main>
+    <main id="main-content">
         <section class="hero-glow">
             <div class="mx-auto max-w-3xl px-6 py-20">
             <h1 class="text-4xl font-bold uppercase sm:text-5xl">Preguntes freqüents</h1>
             <p class="mt-4 text-muted">Troba la resposta ràpida a tot el que necessites saber.</p>
             <div class="mt-14 space-y-10"><template
-                    x-for="cat in [{name:'Compte',items:[['Com creo un compte?','Accedeix a la pàgina de registre, introdueix les teves dades i segueix les instruccions.'],['Puc fer servir el compte en diversos dispositius?','Sí, pots accedir al teu compte des de qualsevol dispositiu compatible.'],['Com canvio la contrasenya?','Ves a la configuració del compte i selecciona l’opció de canviar la contrasenya.']]},{name:'Ús de l’app',items:[['Quines són les funcions principals?','Pots organitzar continguts, fer cerques i personalitzar el teu espai.'],['Funciona sense connexió?','Algunes funcions bàsiques poden estar disponibles sense connexió.']]},{name:'Preus',items:[['El pla Bàsic té cost?','No, el pla Bàsic és gratuït i inclou les funcions essencials.'],['Puc cancel·lar quan vulgui?','Sí, pots gestionar o cancel·lar la subscripció des del teu compte.']]},{name:'Suport',items:[['Com contacto amb l’equip?','Pots contactar amb nosaltres mitjançant el formulari o el correu de suport.']]}]">
+                    x-for="(cat, ci) in [{name:'Compte',items:[['Com creo un compte?','Accedeix a la pàgina de registre, introdueix les teves dades i segueix les instruccions.'],['Puc fer servir el compte en diversos dispositius?','Sí, pots accedir al teu compte des de qualsevol dispositiu compatible.'],['Com canvio la contrasenya?','Ves a la configuració del compte i selecciona l’opció de canviar la contrasenya.']]},{name:'Ús de l’app',items:[['Quines són les funcions principals?','Pots organitzar continguts, fer cerques i personalitzar el teu espai.'],['Funciona sense connexió?','Algunes funcions bàsiques poden estar disponibles sense connexió.']]},{name:'Preus',items:[['El pla Bàsic té cost?','No, el pla Bàsic és gratuït i inclou les funcions essencials.'],['Puc cancel·lar quan vulgui?','Sí, pots gestionar o cancel·lar la subscripció des del teu compte.']]},{name:'Suport',items:[['Com contacto amb l’equip?','Pots contactar amb nosaltres mitjançant el formulari o el correu de suport.']]}]">
                     <div>
                         <h2 class="text-sm font-semibold uppercase tracking-widest text-mint" x-text="cat.name"></h2>
                         <div class="mt-5 space-y-3"><template x-for="(item,i) in cat.items">
                                 <article class="card-surface overflow-hidden">
                                     <button type="button"
                                         class="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-secondary/40"
-                                        @click="toggleFaq(cat.name.toLowerCase()+'-'+i)"
-                                        :aria-expanded="openFaq===cat.name.toLowerCase()+'-'+i">
+                                        @click="toggleFaq(ci+'-'+i)"
+                                        :aria-expanded="openFaq===ci+'-'+i"
+                                        :aria-controls="'faq-'+ci+'-'+i">
                                         <span class="font-display font-semibold" x-text="item[0]"></span>
                                         <span class="text-primary transition-transform duration-300"
-                                            :class="openFaq===cat.name.toLowerCase()+'-'+i?'rotate-180':''">⌄</span>
+                                            :class="openFaq===ci+'-'+i?'rotate-180':''">⌄</span>
                                     </button>
                                     <div x-cloak class="grid transition-[grid-template-rows] duration-300 ease-out"
-                                        :class="openFaq===cat.name.toLowerCase()+'-'+i?'grid-rows-[1fr]':'grid-rows-[0fr]'">
+                                        :id="'faq-'+ci+'-'+i"
+                                        :aria-hidden="openFaq!==ci+'-'+i"
+                                        :class="openFaq===ci+'-'+i?'grid-rows-[1fr]':'grid-rows-[0fr]'">
                                         <div class="min-h-0 overflow-hidden">
                                             <p class="px-6 pb-5 text-sm leading-relaxed text-muted" x-text="item[1]"></p>
                                         </div>
@@ -46,7 +63,7 @@
                 </template></div>
             <div class="card-surface mt-16 p-8 text-center">
                 <h2 class="text-2xl font-bold">Encara tens dubtes?</h2>
-                <p class="mt-2 text-sm text-muted">Estarem encantats d'ajudar-te.</p><a href="contacte.html"
+                <p class="mt-2 text-sm text-muted">Estarem encantats d'ajudar-te.</p><a href="contactans.html"
                     class="btn-primary mt-6">Contacta amb nosaltres</a>
             </div>
             </div>

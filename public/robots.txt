@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://2dam-202627-projecte.github.io/Grup2/sitemap.xml
