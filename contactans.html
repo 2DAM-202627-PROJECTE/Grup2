@@ -18,9 +18,9 @@
     <main>
         <section class="hero-glow">
             <div class="mx-auto flex max-w-md flex-col px-6 py-20">
-            <h1 class="text-center text-3xl font-bold">Contacta amb nosaltres</h1>
-            <p class="mt-2 text-center text-sm text-muted">Tens un dubte? Escriu-nos i et respondrem ben aviat.</p>
-            <form class="card-surface mt-10 space-y-5 p-8" x-data="{
+                <h1 class="text-center text-3xl font-bold">Contacta amb nosaltres</h1>
+                <p class="mt-2 text-center text-sm text-muted">Tens un dubte? Escriu-nos i et respondrem ben aviat.</p>
+                <form class="card-surface mt-10 space-y-5 p-8" x-data="{
                       sending: false,
                       sent: false,
                       error: false,
@@ -41,43 +41,47 @@
                           this.sending = false;
                       }
                   }" @submit.prevent="send($event)">
-            
-                <!-- Anti-spam: els robots l'omplen, les persones no el veuen -->
-                <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
-            
-                <label class="block"><span
-                        class="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted">Nom</span><input required
-                        type="text" name="nom" placeholder="El teu nom"
-                        class="w-full rounded-xl border border-border bg-secondary px-4 py-3 text-sm outline-none placeholder:text-muted focus:border-primary"></label>
-            
-                <label class="block"><span class="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted">Correu
-                        electrònic</span><input required type="email" name="email" placeholder="tu@correu.com"
-                        class="w-full rounded-xl border border-border bg-secondary px-4 py-3 text-sm outline-none placeholder:text-muted focus:border-primary"></label>
-            
-                <label class="block"><span
-                        class="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted">Assumpte</span><input required
-                        type="text" name="_subject" placeholder="En què et podem ajudar?"
-                        class="w-full rounded-xl border border-border bg-secondary px-4 py-3 text-sm outline-none placeholder:text-muted focus:border-primary"></label>
-            
-                <label class="block"><span
-                        class="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted">Missatge</span><textarea
-                        required rows="5" name="missatge" placeholder="Escriu aquí el teu missatge"
-                        class="w-full resize-none rounded-xl border border-border bg-secondary px-4 py-3 text-sm outline-none placeholder:text-muted focus:border-primary"></textarea></label>
-            
-                <label class="flex items-start gap-3 text-xs text-muted">
-                    <input required type="checkbox" name="privacitat" class="mt-0.5">
-                    <span>He llegit i accepto el tractament de les meves dades per respondre la consulta.</span>
-                </label>
-            
-                <button type="submit" class="btn-primary w-full" :disabled="sending"
-                    x-text="sending ? 'Enviant...' : 'Envia el missatge'"></button>
-            
-                <p x-show="sent" x-cloak class="text-center text-sm text-mint">Gràcies! Hem rebut el teu missatge.</p>
-                <p x-show="error" x-cloak class="text-center text-sm text-red-400">No s'ha pogut enviar. Torna-ho a provar o
-                    escriu-nos per correu.</p>
-            </form>
-            <p class="mt-6 text-center text-sm text-muted">També ens pots escriure a <a
-                    href="mailto:sonorasenselimits@gmail.com" class="text-primary hover:underline">sonorasenselimits@gmail.com</a></p>
+
+                    <!-- Anti-spam: els robots l'omplen, les persones no el veuen -->
+                    <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
+
+                    <label class="block"><span
+                            class="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted">Nom</span><input
+                            required type="text" name="nom" placeholder="El teu nom"
+                            class="w-full rounded-xl border border-border bg-secondary px-4 py-3 text-sm outline-none placeholder:text-muted focus:border-primary"></label>
+
+                    <label class="block"><span
+                            class="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted">Correu
+                            electrònic</span><input required type="email" name="email" placeholder="tu@correu.com"
+                            class="w-full rounded-xl border border-border bg-secondary px-4 py-3 text-sm outline-none placeholder:text-muted focus:border-primary"></label>
+
+                    <label class="block"><span
+                            class="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted">Assumpte</span><input
+                            required type="text" name="_subject" placeholder="En què et podem ajudar?"
+                            class="w-full rounded-xl border border-border bg-secondary px-4 py-3 text-sm outline-none placeholder:text-muted focus:border-primary"></label>
+
+                    <label class="block"><span
+                            class="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted">Missatge</span><textarea
+                            required rows="5" name="missatge" placeholder="Escriu aquí el teu missatge"
+                            class="w-full resize-none rounded-xl border border-border bg-secondary px-4 py-3 text-sm outline-none placeholder:text-muted focus:border-primary"></textarea></label>
+
+                    <label class="flex items-start gap-3 text-xs text-muted">
+                        <input required type="checkbox" name="privacitat" class="mt-0.5">
+                        <span>He llegit i accepto el tractament de les meves dades per respondre la consulta.</span>
+                    </label>
+
+                    <button type="submit" class="btn-primary w-full" :disabled="sending"
+                        x-text="sending ? 'Enviant...' : 'Envia el missatge'"></button>
+
+                    <p x-show="sent" x-cloak class="text-center text-sm text-mint">Gràcies! Hem rebut el teu missatge.
+                    </p>
+                    <p x-show="error" x-cloak class="text-center text-sm text-red-400">No s'ha pogut enviar. Torna-ho a
+                        provar o
+                        escriu-nos per correu.</p>
+                </form>
+                <p class="mt-6 text-center text-sm text-muted">També ens pots escriure a <a
+                        href="mailto:sonorasenselimits@gmail.com"
+                        class="text-primary hover:underline">sonorasenselimits@gmail.com</a></p>
             </div>
         </section>
     </main>
@@ -86,4 +90,3 @@
 </body>
 
 </html>
-
