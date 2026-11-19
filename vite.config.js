@@ -40,9 +40,10 @@ export default defineConfig({
         main: 'index.html',
         about: 'about.html',
         faq: 'faq.html',
-        contacte: 'contacte.html',
+        contactans: 'contactans.html',
         login: 'login.html',
         register: 'register.html',
+        politica_cookies: 'politica_cookies.html'
       },
     },
   },
