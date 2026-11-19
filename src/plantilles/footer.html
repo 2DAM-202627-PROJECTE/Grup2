@@ -44,14 +44,26 @@
 <div x-data="{
         consent: (() => { try { return localStorage.getItem('cookie-consent') } catch (e) { return null } })(),
         show: false,
+        prior: null,
         set(v) {
             const abans = this.consent;
             this.consent = v;
             try { localStorage.setItem('cookie-consent', v) } catch (e) {}
             this.show = false;
             if (abans === 'accepted' && v === 'rejected') location.reload();
+        },
+        init() {
+            this.$watch('show', v => {
+                if (v) {
+                    this.prior = document.activeElement;
+                    this.$nextTick(() => this.$refs.accept?.focus());
+                } else if (this.prior && this.prior.focus) {
+                    this.prior.focus();
+                }
+            });
+            this.show = !this.consent;
         }
-     }" x-init="show = !consent" @open-cookies.window="show = true" x-effect="if (consent === 'accepted' && !window.gtag) {
+     }" @open-cookies.window="show = true" @keydown.escape.window="if (consent) show = false" x-effect="if (consent === 'accepted' && !window.gtag) {
         window.dataLayer = [];
         window.gtag = function () { dataLayer.push(arguments) };
         gtag('js', new Date());
@@ -62,7 +74,8 @@
         document.head.appendChild(s);
      }" x-show="show" x-cloak x-transition.opacity
     class="fixed inset-0 z-50 flex items-center justify-center bg-background/80 p-4 backdrop-blur-sm" role="dialog"
-    aria-modal="true" aria-labelledby="cookie-title">
+    aria-modal="true" aria-labelledby="cookie-title"
+    @keydown.tab.prevent="const f = [...$el.querySelectorAll('button, a[href]')]; const i = f.indexOf(document.activeElement); f[(i + ($event.shiftKey ? -1 : 1) + f.length) % f.length].focus()">
     <div class="card-surface w-full max-w-md p-8 shadow-2xl" @click.outside="if (consent) show = false">
         <div class="text-3xl text-primary">✦</div>
         <h2 id="cookie-title" class="mt-4 text-2xl font-bold">Utilitzem cookies</h2>
@@ -71,8 +84,8 @@
             Més informació a la <a href="politica_cookies.html" class="text-primary underline">política de cookies</a>.
         </p>
         <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-            <button type="button" @click="set('rejected')" class="btn-outline flex-1">Rebutjar</button>
-            <button type="button" @click="set('accepted')" class="btn-outline flex-1">Acceptar</button>
+            <button type="button" x-ref="reject" @click="set('rejected')" class="btn-outline flex-1">Rebutjar</button>
+            <button type="button" x-ref="accept" @click="set('accepted')" class="btn-outline flex-1">Acceptar</button>
         </div>
     </div>
 </div>

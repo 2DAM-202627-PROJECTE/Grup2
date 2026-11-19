@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Registra’t a Sonora en pocs segons.">
     <title>Crea el teu compte — Sonora</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://2dam-202627-projecte.github.io/Grup2/register.html">
+    <meta name="theme-color" content="#211e25">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sonora">
+    <meta property="og:locale" content="ca_ES">
+    <meta property="og:title" content="Crea el teu compte — Sonora">
+    <meta property="og:description" content="Registra’t a Sonora en pocs segons.">
+    <meta property="og:url" content="https://2dam-202627-projecte.github.io/Grup2/register.html">
+    <meta property="og:image" content="https://2dam-202627-projecte.github.io/Grup2/wave.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Crea el teu compte — Sonora">
+    <meta name="twitter:description" content="Registra’t a Sonora en pocs segons.">
+    <meta name="twitter:image" content="https://2dam-202627-projecte.github.io/Grup2/wave.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,22 +29,22 @@
 
 <body x-data="siteUI">
     <!-- include:header -->
-    <main>
+    <main id="main-content">
         <section class="hero-glow">
             <div class="mx-auto flex max-w-md flex-col px-6 py-20">
             <h1 class="text-center text-3xl font-bold">Crea el teu compte</h1>
             <p class="mt-2 text-center text-sm text-muted">Comença a gaudir de totes les funcionalitats.</p>
             <form class="card-surface mt-10 space-y-5 p-8" @submit.prevent="formDone=true"><label class="block"><span
                         class="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted">Nom</span><input
-                        required type="text" placeholder="El teu nom"
+                        required type="text" autocomplete="name" placeholder="El teu nom"
                         class="w-full rounded-xl border border-border bg-secondary px-4 py-3 text-sm outline-none placeholder:text-muted focus:border-primary"></label><label
                     class="block"><span
                         class="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted">Correu
-                        electrònic</span><input required type="email" placeholder="tu@correu.com"
+                        electrònic</span><input required type="email" autocomplete="email" placeholder="tu@correu.com"
                         class="w-full rounded-xl border border-border bg-secondary px-4 py-3 text-sm outline-none placeholder:text-muted focus:border-primary"></label><label
                     class="block"><span
                         class="mb-2 block text-xs font-semibold uppercase tracking-widest text-muted">Contrasenya</span><input
-                        required type="password" placeholder="Mínim 8 caràcters"
+                        required type="password" autocomplete="new-password" placeholder="Mínim 8 caràcters"
                         class="w-full rounded-xl border border-border bg-secondary px-4 py-3 text-sm outline-none placeholder:text-muted focus:border-primary"></label><button
                     type="submit" class="btn-primary w-full">Crea el teu compte</button>
                 <p x-show="formDone" class="text-center text-sm text-mint">Compte creat! Ja pots iniciar sessió.</p>

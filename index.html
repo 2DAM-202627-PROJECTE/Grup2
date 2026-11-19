@@ -4,8 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Plantilla de landing per a apps i productes digitals.">
-    <title>Sonora</title>
+    <meta name="description" content="Sonora és la plataforma de música que et permet escoltar cançons, podcasts i playlists personalitzades sense interrupcions ni límits.">
+    <title>Sonora — Música sense límits, siguis on siguis</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://2dam-202627-projecte.github.io/Grup2/">
+    <meta name="theme-color" content="#211e25">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sonora">
+    <meta property="og:locale" content="ca_ES">
+    <meta property="og:title" content="Sonora — Música sense límits, siguis on siguis">
+    <meta property="og:description" content="Sonora és la plataforma de música que et permet escoltar cançons, podcasts i playlists personalitzades sense interrupcions ni límits.">
+    <meta property="og:url" content="https://2dam-202627-projecte.github.io/Grup2/">
+    <meta property="og:image" content="https://2dam-202627-projecte.github.io/Grup2/wave.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sonora — Música sense límits, siguis on siguis">
+    <meta name="twitter:description" content="Sonora és la plataforma de música que et permet escoltar cançons, podcasts i playlists personalitzades sense interrupcions ni límits.">
+    <meta name="twitter:image" content="https://2dam-202627-projecte.github.io/Grup2/wave.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,7 +29,7 @@
 
 <body x-data="siteUI">
     <!-- include:header -->
-    <main>
+    <main id="main-content">
         <section class="hero-glow relative overflow-hidden">
             <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:py-28">
                 <div><span
@@ -62,7 +76,7 @@
                                     <div class="mx-auto mt-4 h-1 w-32 overflow-hidden rounded-full bg-white/10">
                                         <div id="hud-bar" class="h-full w-0 rounded-full bg-primary transition-all duration-500"></div>
                                     </div>
-                                    <p id="hint" class="mt-3 text-[10px] uppercase tracking-widest text-muted transition-opacity">Fes scroll ↓</p>
+                                    <p id="hint" class="mt-3 text-xs uppercase tracking-widest text-muted transition-opacity">Fes scroll ↓</p>
                                 </div>
                             </div>
                         </div>
@@ -135,7 +149,11 @@
                         strip.style.transform = `translateY(-${index * 100}%)`;
                         lockUntil = performance.now() + SLIDE_MS;
                         slides.forEach((s, k) => s.classList.toggle('is-active', k === index));
-                        dots.forEach((d, k) => d.classList.toggle('on', k === index));
+                        dots.forEach((d, k) => {
+                            d.classList.toggle('on', k === index);
+                            if (k === index) d.setAttribute('aria-current', 'true');
+                            else d.removeAttribute('aria-current');
+                        });
                         hudCount.textContent = `${pad(index + 1)} / ${pad(N)}`;
                         hudName.textContent = VINYLS[index].name;
                         hudAlbum.textContent = VINYLS[index].album;
@@ -212,7 +230,7 @@
                     x-for="p in [{n:'BÀSIC',price:'€0',perks:['Salt de cançons limitat','Amb anuncis','Sol ús online']},{n:'PREMIUM INDIVIDUAL',price:'€7,99',hot:true,perks:['Sense anuncis','Salts il·limitats','Disponible sense connexió']},{n:'PLA FAMILIAR',price:'€10',perks:['Fins a 6 comptes','Sense anuncis', 'Salts il·limitats', 'Disponible sense connexió']}]">
                     <article class="card-surface relative flex flex-col p-8"
                         :class="p.hot?'border-primary shadow-[var(--glow)]':''"><span x-show="p.hot"
-                            class="absolute -top-3 left-8 rounded-full bg-mint px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-background">El
+                            class="absolute -top-3 left-8 rounded-full bg-mint px-3 py-1 text-xs font-bold uppercase tracking-widest text-background">El
                             més popular</span>
                         <h3 class="text-sm font-semibold uppercase tracking-widest text-primary" x-text="p.n"></h3>
                         <p class="mt-5 font-display text-4xl font-bold"><span x-text="p.price"></span><span
@@ -233,10 +251,10 @@
                     href="register.html" class="btn-primary mt-9">Comença ara</a>
                 <div class="mt-10 flex flex-wrap justify-center gap-4">
                     <div class="rounded-xl border border-border px-6 py-3 text-left"><span
-                            class="block text-[10px] uppercase tracking-widest text-muted">Descarrega a</span><b>App
+                            class="block text-xs uppercase tracking-widest text-muted">Descarrega a</span><b>App
                             Store</b></div>
                     <div class="rounded-xl border border-border px-6 py-3 text-left"><span
-                            class="block text-[10px] uppercase tracking-widest text-muted">Descarrega a</span><b>Google
+                            class="block text-xs uppercase tracking-widest text-muted">Descarrega a</span><b>Google
                             Play</b></div>
                 </div>
             </div>
@@ -252,7 +270,8 @@
                         correu. Torna-ho a provar.</p>
                 </div>
                 <form class="flex w-full max-w-md flex-col gap-3 sm:flex-row" @submit.prevent="subscribeNewsletter()">
-                    <input required type="email" x-model="newsletterEmail" placeholder="El teu correu electrònic"
+                    <label class="sr-only" for="newsletter-email">Correu electrònic</label>
+                    <input id="newsletter-email" required type="email" autocomplete="email" x-model="newsletterEmail" placeholder="El teu correu electrònic"
                         class="w-full rounded-full border border-border bg-secondary px-5 py-3 text-sm outline-none focus:border-primary"><button
                         :disabled="newsletterSending"
                         class="btn-primary whitespace-nowrap disabled:opacity-60"><span

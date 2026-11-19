@@ -1,28 +1,29 @@
+<a href="#main-content" class="sr-only rounded-full bg-primary px-4 py-2 font-semibold text-background focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60]">Vés al contingut principal</a>
 <header class="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="index.html" class="font-display text-2xl font-bold"><img src="/src/assets/logoPetit.png" alt="Sonora" width="85" height="85"><span class="text-primary"></span></a>
         <nav class="hidden items-center gap-8 md:flex">
-            <a class="text-sm text-muted hover:text-primary" href="index.html">Inici</a>
-            <a class="text-sm text-muted hover:text-primary" href="about.html">Sobre nosaltres</a>
-            <a class="text-sm text-muted hover:text-primary" href="funcionalitats.html">Funcionalitats</a>
-            <a class="text-sm text-muted hover:text-primary" href="faq.html">FAQ</a>
-            <a class="text-sm text-muted hover:text-primary" href="contactans.html">Contacta'ns</a>
+            <a class="text-sm text-muted hover:text-primary" href="index.html" :aria-current="location.pathname.endsWith('/') || location.pathname.endsWith('index.html') ? 'page' : null">Inici</a>
+            <a class="text-sm text-muted hover:text-primary" href="about.html" :aria-current="location.pathname.endsWith('about.html') ? 'page' : null">Sobre nosaltres</a>
+            <a class="text-sm text-muted hover:text-primary" href="funcionalitats.html" :aria-current="location.pathname.endsWith('funcionalitats.html') ? 'page' : null">Funcionalitats</a>
+            <a class="text-sm text-muted hover:text-primary" href="faq.html" :aria-current="location.pathname.endsWith('faq.html') ? 'page' : null">FAQ</a>
+            <a class="text-sm text-muted hover:text-primary" href="contactans.html" :aria-current="location.pathname.endsWith('contactans.html') ? 'page' : null">Contacta'ns</a>
         </nav>
         <div class="hidden items-center gap-5 md:flex">
             <a href="login.html" class="text-sm hover:text-primary">Iniciar sessió</a>
             <a href="register.html" class="btn-primary !px-5 !py-2.5">Registra't</a>
         </div>
-        <button class="text-primary md:hidden" @click="menuOpen=!menuOpen" aria-label="Obrir menú">
+        <button class="text-primary md:hidden" @click="menuOpen=!menuOpen" :aria-label="menuOpen ? 'Tancar menú' : 'Obrir menú'" :aria-expanded="menuOpen">
             <span x-text="menuOpen ? '✕' : '☰'"></span>
         </button>
     </div>
     <nav x-show="menuOpen" x-transition class="border-t border-border px-6 py-5 md:hidden">
         <div class="flex flex-col gap-4">
-            <a href="index.html">Inici</a>
-            <a href="about.html">Sobre nosaltres</a>
-            <a href="funcionalitats.html">Funcionalitats</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contactans.html">Contacta'ns</a>
+            <a href="index.html" :aria-current="location.pathname.endsWith('/') || location.pathname.endsWith('index.html') ? 'page' : null">Inici</a>
+            <a href="about.html" :aria-current="location.pathname.endsWith('about.html') ? 'page' : null">Sobre nosaltres</a>
+            <a href="funcionalitats.html" :aria-current="location.pathname.endsWith('funcionalitats.html') ? 'page' : null">Funcionalitats</a>
+            <a href="faq.html" :aria-current="location.pathname.endsWith('faq.html') ? 'page' : null">FAQ</a>
+            <a href="contactans.html" :aria-current="location.pathname.endsWith('contactans.html') ? 'page' : null">Contacta'ns</a>
             <a href="login.html">Iniciar sessió</a>
             <a href="register.html" class="btn-primary">Registra't</a>
         </div>
