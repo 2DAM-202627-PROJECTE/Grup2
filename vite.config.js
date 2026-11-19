@@ -39,8 +39,9 @@ export default defineConfig({
       input: {
         main: 'index.html',
         about: 'about.html',
+        funcionalitats: 'funcionalitats.html',
         faq: 'faq.html',
-        contacte: 'contacte.html',
+        contactans: 'contactans.html',
         login: 'login.html',
         register: 'register.html',
         politica_cookies: 'politica_cookies.html'
