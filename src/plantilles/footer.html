@@ -51,7 +51,8 @@
             this.show = false;
             if (abans === 'accepted' && v === 'rejected') location.reload();
         }
-     }" x-init="show = !consent" @open-cookies.window="show = true" x-effect="if (consent === 'accepted' && !window.gtag) {
+     }" x-init="show = !consent && !document.body.hasAttribute('data-policy')" @open-cookies.window="show = true"
+    x-effect="if (consent === 'accepted' && !window.gtag) {
         window.dataLayer = [];
         window.gtag = function () { dataLayer.push(arguments) };
         gtag('js', new Date());
@@ -68,7 +69,9 @@
         <h2 id="cookie-title" class="mt-4 text-2xl font-bold">Utilitzem cookies</h2>
         <p class="mt-3 text-sm text-muted">
             Fem servir cookies tècniques i, si ho acceptes, d’analítica per millorar el web.
-            Més informació a la <a href="politica_cookies.html" class="text-primary underline">política de cookies</a>.
+            Més informació a la
+            <a href="politica_cookies.html" target="_blank" rel="noopener" class="text-primary underline">política de
+                cookies</a>.
         </p>
         <div class="mt-7 flex flex-col gap-3 sm:flex-row">
             <button type="button" @click="set('rejected')" class="btn-outline flex-1">Rebutjar</button>
