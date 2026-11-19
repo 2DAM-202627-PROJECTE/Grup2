@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="text-sm">
           Fem servir cookies pròpies i de tercers per analitzar l'ús del web.
           Més informació a la
-          <a href="${POLICY_URL}" class="text-sky-300 underline">política de cookies</a>.
+          <a href="politica_cookies.html" target="_blank" rel="noopener" class="text-primary underline">política de cookies</a>.
         </p>
         <div class="flex gap-2">
           <button @click="set('rejected')"
