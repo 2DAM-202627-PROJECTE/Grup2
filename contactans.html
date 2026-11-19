@@ -67,7 +67,11 @@
                 <label class="flex items-start gap-3 text-xs text-muted">
                     <input required type="checkbox" name="privacitat" class="mt-0.5">
                     <span>He llegit i accepto el tractament de les meves dades per respondre la consulta.</span>
-                </label>         
+                </label>
+            
+                <button type="submit" class="btn-primary w-full" :disabled="sending"
+                    x-text="sending ? 'Enviant...' : 'Envia el missatge'"></button>
+            
                 <p x-show="sent" x-cloak class="text-center text-sm text-mint">Gràcies! Hem rebut el teu missatge.</p>
                 <p x-show="error" x-cloak class="text-center text-sm text-red-400">No s'ha pogut enviar. Torna-ho a provar o
                     escriu-nos per correu.</p>
