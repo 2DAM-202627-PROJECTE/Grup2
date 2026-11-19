@@ -24,7 +24,7 @@ npm run preview
 ## Estructura
 
 - `index.html`: landing principal.
-- `about.html`, `faq.html`, `contacte.html`, `login.html`, `register.html`: pàgines addicionals.
+- `about.html`, `funcionalitats.html`, `faq.html`, `contactans.html`, `login.html`, `register.html`, `politica_cookies.html`: pàgines addicionals.
 - `src/main.js`: inicialització d'Alpine.js i comportaments interactius.
 - `src/plantilles/header.html`, `src/plantilles/footer.html`: header i footer compartits, injectats a cada pàgina amb `<!-- include:header -->` i `<!-- include:footer -->`.
 - `src/styles.css`: Tailwind CSS v4 i estils globals.

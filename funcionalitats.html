@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Les funcionalitats que inclourà Sonora quan l'aplicació estigui desenvolupada.">
+    <title>Funcionalitats — Sonora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body x-data="siteUI">
+    <!-- include:header -->
+    <main>
+        <section class="hero-glow overflow-hidden">
+            <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
+                <div>
+                    <h1 class="text-4xl font-bold uppercase leading-tight sm:text-5xl">Les funcionalitats de <span
+                            class="text-gradient">Sonora</span></h1>
+                    <p class="mt-6 max-w-lg text-lg text-muted">Aquestes són les funcions que incorporarà la nostra
+                        aplicació de música quan estigui acabada: una experiència pensada per escoltar qualsevol estil,
+                        en qualsevol lloc i amb un aspecte totalment adaptat a tu.</p>
+                </div>
+                <div>
+                    <div class="relative flex justify-center" aria-hidden="true">
+                        <div class="absolute inset-0 rounded-full bg-primary/15 blur-3xl"></div>
+                        <div class="card-surface relative w-full max-w-md overflow-hidden shadow-2xl">
+                            <div class="flex items-center justify-between border-b border-border px-5 py-4">
+                                <span class="font-display text-sm font-bold">Sonora<span
+                                        class="text-primary">.</span></span>
+                                <span
+                                    class="rounded-full bg-mint/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-mint">Vista
+                                    prèvia</span>
+                            </div>
+                            <div class="flex gap-5 p-5">
+                                <div class="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl shadow-lg sm:h-32 sm:w-32"
+                                    style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary) 55%, var(--color-mint))">
+                                    <div class="absolute -right-6 -top-6 h-24 w-24 rounded-full border-8 border-background/20"></div>
+                                    <div class="absolute bottom-4 left-4 h-10 w-10 rounded-full border border-background/40"></div>
+                                    <div class="absolute inset-x-0 bottom-0 h-1/2"
+                                        style="background: linear-gradient(to top, oklch(0.13 0.005 300 / 70%), transparent)"></div>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <p class="text-[10px] font-semibold uppercase tracking-widest text-mint">Reproduint
+                                        ara</p>
+                                    <p class="mt-3 truncate font-display text-xl font-bold">Horizon</p>
+                                    <p class="mt-1 truncate text-sm text-muted">Llum Blava</p>
+                                    <p class="mt-5 text-[11px] text-muted">Àlbum · 2026</p>
+                                </div>
+                            </div>
+                            <div class="px-5">
+                                <div class="h-1.5 rounded-full bg-secondary">
+                                    <div class="h-1.5 w-1/3 rounded-full bg-mint"></div>
+                                </div>
+                                <div class="mt-2 flex justify-between text-[10px] text-muted">
+                                    <span>1:24</span><span>4:02</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center gap-6 px-5 py-5 text-muted">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 6h4l10 12h4" />
+                                    <path d="m17 4 4 2-4 2" />
+                                    <path d="M3 18h4l3-3.6" />
+                                    <path d="m14 9.6 3-3.6" />
+                                </svg>
+                                <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current text-foreground">
+                                    <path d="M6 5h2v14H6zm3 7 9-7v14z" />
+                                </svg>
+                                <span class="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-background shadow-lg">
+                                    <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </span>
+                                <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current text-foreground">
+                                    <path d="M16 5h2v14h-2zM7 5l9 7-9 7z" />
+                                </svg>
+                                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 2l4 4-4 4" />
+                                    <path d="M3 11V9a3 3 0 0 1 3-3h15" />
+                                    <path d="M7 22l-4-4 4-4" />
+                                    <path d="M21 13v2a3 3 0 0 1-3 3H3" />
+                                </svg>
+                            </div>
+                            <div class="border-t border-border px-5 py-4">
+                                <p class="text-[10px] font-semibold uppercase tracking-widest text-muted">A
+                                    continuació</p>
+                                <div class="mt-3 space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <span class="h-9 w-9 shrink-0 rounded-lg"
+                                            style="background: linear-gradient(135deg, var(--color-mint), var(--color-secondary))"></span>
+                                        <span class="min-w-0 flex-1">
+                                            <span class="block truncate text-xs font-semibold">Mar de calma</span>
+                                            <span class="block truncate text-[10px] text-muted">Llum Blava</span>
+                                        </span>
+                                        <span class="text-[10px] text-muted">3:41</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <span class="h-9 w-9 shrink-0 rounded-lg"
+                                            style="background: linear-gradient(135deg, var(--color-secondary), var(--color-primary))"></span>
+                                        <span class="min-w-0 flex-1">
+                                            <span class="block truncate text-xs font-semibold">Ritme nocturn</span>
+                                            <span class="block truncate text-[10px] text-muted">Eco</span>
+                                        </span>
+                                        <span class="text-[10px] text-muted">2:58</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 py-20" x-data="{
+                cat: 'Totes',
+                cats: ['Totes', 'Escolta', 'Descoberta', 'Personalització', 'Compte'],
+                features: [
+                    { icon: '♫', t: 'Reproducció contínua', d: 'Escolta les teves cançons preferides sense interrupcions i amb una qualitat sonora adaptada a la teva connexió.', cat: 'Escolta' },
+                    { icon: '▷', t: 'Reproducció en segon pla', d: 'Mantén la música sonant mentre fas servir altres aplicacions o tens la pantalla bloquejada.', cat: 'Escolta' },
+                    { icon: '⇩', t: 'Mode sense connexió', d: 'Desa àlbums i llistes al dispositiu per continuar escoltant encara que no tinguis internet.', cat: 'Escolta' },
+                    { icon: '⌕', t: 'Cerca intel·ligent', d: 'Troba artistes, àlbums, gèneres i llets en segons, amb resultats adaptats als teus gustos.', cat: 'Descoberta' },
+                    { icon: '✧', t: 'Recomanacions personalitzades', d: 'Descobreix nova música a partir del que escoltes i de les teves llistes preferides.', cat: 'Descoberta' },
+                    { icon: '☷', t: 'Llistes i col·leccions', d: 'Crea, ordena i comparteix les teves pròpies col·leccions de cançons amb la comunitat.', cat: 'Descoberta' },
+                    { icon: '✦', t: 'Interfície personalitzable', d: 'Tria temes, colors i disposició perquè Sonora tingui exactament el teu estil preferit.', cat: 'Personalització' },
+                    { icon: '▣', t: 'Sincronització entre dispositius', d: 'Comença a escoltar al mòbil i continua en un ordinador exactament on ho has deixat.', cat: 'Compte' },
+                    { icon: '◉', t: 'Perfil i estadístiques', d: 'Consulta què escoltes més i rep un resum dels teus hàbits musicals cada setmana.', cat: 'Compte' },
+                    { icon: '♙', t: 'Comunitat musical', d: 'Segueix altres usuaris, comenta les seves llistes i comparteix els teus descobriments.', cat: 'Compte' }
+                ]
+            }">
+            <div class="max-w-2xl">
+                <h2 class="text-3xl font-bold sm:text-4xl">Una app feta per escoltar, descobrir i personalitzar</h2>
+                <p class="mt-3 text-muted">Filtra per categoria i descobreix què estem preparant.</p>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-3">
+                <template x-for="c in cats" :key="c">
+                    <button type="button" @click="cat = c"
+                        class="rounded-full border px-5 py-2 text-sm transition"
+                        :class="cat === c ? 'border-primary bg-primary text-background' : 'border-border text-muted hover:border-primary hover:text-primary'"
+                        x-text="c"></button>
+                </template>
+            </div>
+            <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <template x-for="f in features.filter(x => cat === 'Totes' || x.cat === cat)" :key="f.t">
+                    <article class="card-surface flex flex-col p-7 transition hover:border-primary/60">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="text-3xl text-primary" x-text="f.icon"></div>
+                            <span class="rounded-full border border-mint/40 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-mint"
+                                x-text="f.cat"></span>
+                        </div>
+                        <h3 class="mt-6 font-display text-lg font-semibold" x-text="f.t"></h3>
+                        <p class="mt-2 text-sm leading-relaxed text-muted" x-text="f.d"></p>
+                    </article>
+                </template>
+            </div>
+        </section>
+
+        <section class="mx-auto max-w-4xl px-6 py-20 text-center">
+            <div class="card-surface p-10">
+                <div class="text-4xl text-primary">✦</div>
+                <h2 class="mt-5 text-2xl font-bold sm:text-3xl">Vols ser el primer a provar-ho?</h2>
+                <p class="mx-auto mt-3 max-w-xl text-sm text-muted">Registra't per rebre novetats sobre el
+                    desenvolupament i les properes funcions de Sonora.</p>
+                <a href="register.html" class="btn-primary mt-8">Registra't ara</a>
+            </div>
+        </section>
+    </main>
+    <!-- include:footer -->
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
