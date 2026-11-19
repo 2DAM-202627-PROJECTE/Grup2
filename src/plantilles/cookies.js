@@ -2,23 +2,24 @@
 // Cal carregar-lo ABANS d'Alpine i amb "defer".
 
 const GA_ID = 'G-XXXXXXXXXX'; // <-- canvia-ho pel teu ID de Google Analytics
-const POLICY_URL = '/politica-cookies.html';
+const POLICY_URL = 'politica_cookies.html';
 
 document.addEventListener('alpine:init', () => {
   Alpine.data('cookieBanner', () => ({
     show: false,
 
     init() {
-      try {
-        const c = localStorage.getItem('cookie-consent');
-        if (c === 'accepted') this.loadAnalytics();
-        else if (!c) this.show = true;
-      } catch (e) {
-        this.show = true;
-      }
-      // Permet reobrir el bàner des del peu de pàgina
-      window.addEventListener('open-cookies', () => (this.show = true));
-    },
+    const isPolicyPage = location.pathname.includes('politica_cookies');
+    try {
+      const c = localStorage.getItem('cookie-consent');
+      if (c === 'accepted') this.loadAnalytics();
+      else if (!c && !isPolicyPage) this.show = true;
+    } catch (e) {
+      if (!isPolicyPage) this.show = true;
+    }
+    // Permet reobrir el bàner des del peu de pàgina o des de la política
+    window.addEventListener('open-cookies', () => (this.show = true));
+  },
 
     set(value) {
       try { localStorage.setItem('cookie-consent', value); } catch (e) {}
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="text-sm">
           Fem servir cookies pròpies i de tercers per analitzar l'ús del web.
           Més informació a la
-          <a href="politica_cookies.html" target="_blank" rel="noopener" class="text-primary underline">política de cookies</a>.
+          <a href="${POLICY_URL}" target="_blank" rel="noopener" class="text-sky-300 underline">política de cookies</a>
         </p>
         <div class="flex gap-2">
           <button @click="set('rejected')"
