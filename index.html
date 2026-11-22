@@ -43,30 +43,30 @@
                 <section id="track">
                     <div id="stage">
                         <div class="pointer-events-none absolute h-[420px] w-[420px] rounded-full bg-primary/15 blur-3xl"></div>
-                
+
                         <!-- MÒBIL -->
                         <div id="phone" class="card-surface relative w-[300px] rounded-[2.5rem] p-3 shadow-2xl" style="height:min(640px,88vh)">
                             <div class="absolute left-1/2 top-4 z-20 h-5 w-24 -translate-x-1/2 rounded-full bg-black"></div>
-                        
+
                             <!-- PANTALLA -->
                             <div class="relative h-full overflow-hidden rounded-[2rem] bg-secondary">
-                        
+
                                 <!-- Tira de vinils (es crea amb JS) -->
                                 <div id="viewport" class="absolute inset-0 overflow-hidden">
                                     <div id="strip" class="flex h-full flex-col transition-transform duration-[650ms] ease-[cubic-bezier(.65,0,.35,1)]">
                                     </div>
                                 </div>
-                        
+
                                 <!-- Capçalera fixa -->
                                 <div
                                     class="absolute inset-x-0 top-0 z-10 flex items-center justify-between bg-gradient-to-b from-secondary via-secondary/80 to-transparent px-4 pb-6 pt-10">
                                     <span class="font-bold"><img src="/src/assets/logoPetit.png" alt="Sonora" width="65" height="65"></span>
                                     <span id="hud-count" class="rounded-full bg-mint/15 px-3 py-1 text-xs text-mint">01 / 07</span>
                                 </div>
-                        
+
                                 <!-- Punts laterals -->
                                 <div id="dots" class="absolute right-2 top-1/2 z-10 flex -translate-y-1/2 flex-col items-center gap-1.5"></div>
-                
+
                                 <!-- HUD inferior: nom + àlbum del vinil actual -->
                                 <div
                                     class="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-secondary via-secondary/90 to-transparent px-8 pb-8 pt-16 text-center">
@@ -137,7 +137,7 @@
                 </table>
             </div>
             <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"><template
-                    x-for="(f,i) in [{icon:'⚡',t:'Rendiment ràpid',d:'Una experiència àgil i fluida en tot moment.'},{icon:'⌕',t:'Cerca intel·ligent',d:'Troba ràpidament allò que estàs buscant.'},{icon:'▦',t:'Organització',d:'Ordena i agrupa els continguts fàcilment.'},{icon:'✦',t:'Recomanacions',d:'Suggeriments adaptats a les teves necessitats.'},{icon:'◉',t:'Sense connexió',d:'Continua treballant quan no tinguis internet.'},{icon:'♙',t:'Compte personal',d:'Les teves dades sempre a mà.'},{icon:'☷',t:'Control total',d:'Configura l'experiència al teu gust.'},{icon:'▣',t:'Multidispositiu',d:'Utilitza-ho des del mòbil o l'ordinador.'}]"
+                    x-for="(f,i) in [{icon:'⚡',t:'Rendiment ràpid',d:'Una experiència àgil i fluida en tot moment.'},{icon:'⌕',t:'Cerca intel·ligent',d:'Troba ràpidament allò que estàs buscant.'},{icon:'▦',t:'Organització',d:'Ordena i agrupa els continguts fàcilment.'},{icon:'✦',t:'Recomanacions',d:'Suggeriments adaptats a les teves necessitats.'},{icon:'◉',t:'Sense connexió',d:'Continua treballant quan no tinguis internet.'},{icon:'♙',t:'Compte personal',d:'Les teves dades sempre a mà.'},{icon:'☷',t:'Control total',d:'Configura l\'experiència al teu gust.'},{icon:'▣',t:'Multidispositiu',d:'Utilitza-ho des del mòbil o l\'ordinador.'}]"
                     :key="f.t">
                     <article class="card-surface p-6 transition hover:border-primary/60">
                         <div class="text-3xl text-primary" x-text="f.icon"></div>
