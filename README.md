@@ -52,9 +52,32 @@ npm run preview
 npm run dev
 ```
 
-## 📁Estructura del projecte
+## 📁 Estructura del projecte
 
-<img width="651" height="510" alt="image" src="https://github.com/user-attachments/assets/50deeb17-f24e-434f-bf7a-fbc7c523b62a" />
+```
+Grup2/
+├── node_modules/
+├── public/
+│   └── wave.jpg                # Recurs gràfic de la plantilla
+├── src/
+│   ├── assets/                 # Imatges (portades dels vinils, visuals…)
+│   ├── plantilles/
+│   │   ├── header.html         # Capçalera compartida
+│   │   └── footer.html         # Peu de pàgina compartit
+│   ├── main.js                 # Inicialització d'Alpine.js i comportaments interactius
+│   └── styles.css              # Tailwind CSS v4 i estils globals
+├── index.html                  # Landing principal
+├── about.html                  # Sobre nosaltres
+├── funcionalitats.html         # Funcionalitats de l'app
+├── faq.html                    # Preguntes freqüents
+├── contactans.html             # Contacte
+├── login.html                  # Inici de sessió
+├── register.html               # Registre
+├── politica_cookies.html       # Política de cookies
+├── package.json                # Dependències i scripts
+├── vite.config.js              # Vite + Tailwind + plugin d'includes
+└── README.md                   # Documentació del projecte
+```
 
 ## 📄 Pàgines de Sonora
 
