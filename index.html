@@ -85,9 +85,56 @@
             </div><img src="/wave.jpg" alt="" class="h-24 w-full object-cover opacity-70">
         </section>
         <section class="mx-auto max-w-7xl px-6 py-20">
-            <div class="max-w-2xl">
-                <h2 class="text-3xl font-bold sm:text-4xl">Tot el que necessites, en un sol lloc</h2>
-                <p class="mt-3 text-muted">El futur de la música a un sol click del teu abast.</p>
+            <div class="flex flex-col items-center gap-10 md:flex-row md:justify-between">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl font-bold sm:text-4xl">Tot el que necessites, en un sol lloc</h2>
+                    <p class="mt-3 text-muted">El futur de la música a un sol click del teu abast.</p>
+                </div>
+                <img src="/src/assets/visual.jpg" alt="Sonora" class="w-[300px] shrink-0 rounded-2xl object-cover" style="margin-right: 150px;">
+            </div>
+            <p>Funcionalitats de les que podràs disfrutar amb Sonora</p>
+            <div class="mt-12 overflow-x-auto rounded-2xl border border-border">
+                <table class="w-full min-w-[820px] text-left text-sm">
+                    <thead class="border-b border-border bg-white/[0.03] text-xs uppercase tracking-widest text-mint">
+                        <tr>
+                            <th class="px-5 py-4 font-medium">Escolta</th>
+                            <th class="px-5 py-4 font-medium">Descoberta</th>
+                            <th class="px-5 py-4 font-medium">Personalització</th>
+                            <th class="px-5 py-4 font-medium">Compte</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-border">
+                        <tr>
+                            <td class="px-5 py-4"><span class="mr-2 text-xl text-primary">♫</span><span
+                                    class="font-semibold">Reproducció contínua</span></td>
+                            <td class="px-5 py-4"><span class="mr-2 text-xl text-primary">⌕</span><span class="font-semibold">Cerca
+                                    intel·ligent</span></td>
+                            <td class="px-5 py-4"><span class="mr-2 text-xl text-primary">✦</span><span
+                                    class="font-semibold">Interfície personalitzable</span></td>
+                            <td class="px-5 py-4"><span class="mr-2 text-xl text-primary">▣</span><span
+                                    class="font-semibold">Sincronització entre dispositius</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-4"><span class="mr-2 text-xl text-primary">▷</span><span
+                                    class="font-semibold">Reproducció en segon pla</span></td>
+                            <td class="px-5 py-4"><span class="mr-2 text-xl text-primary">✧</span><span
+                                    class="font-semibold">Recomanacions personalitzades</span></td>
+                            <td class="px-5 py-4"><span class="mr-2 text-xl text-primary">♡</span><span
+                                    class="font-semibold">Creació de llistes de reproducció</span></td>
+                            <td class="px-5 py-4"><span class="mr-2 text-xl text-primary">◉</span><span class="font-semibold">Perfil
+                                    i estadístiques</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-4"><span class="mr-2 text-xl text-primary">⇩</span><span class="font-semibold">Mode
+                                    sense connexió</span></td>
+                            <td class="px-5 py-4"><span class="mr-2 text-xl text-primary">☷</span><span
+                                    class="font-semibold">Llistes i col·leccions</span></td>
+                            <td class="px-5 py-4 text-muted"></td>
+                            <td class="px-5 py-4"><span class="mr-2 text-xl text-primary">♗</span><span
+                                    class="font-semibold">Comunitat musical</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"><template
                     x-for="(f,i) in [{icon:'⚡',t:'Rendiment ràpid',d:'Una experiència àgil i fluida en tot moment.'},{icon:'⌕',t:'Cerca intel·ligent',d:'Troba ràpidament allò que estàs buscant.'},{icon:'▦',t:'Organització',d:'Ordena i agrupa els continguts fàcilment.'},{icon:'✦',t:'Recomanacions',d:'Suggeriments adaptats a les teves necessitats.'},{icon:'◉',t:'Sense connexió',d:'Continua treballant quan no tinguis internet.'},{icon:'♙',t:'Compte personal',d:'Les teves dades sempre a mà.'},{icon:'☷',t:'Control total',d:'Configura l\'experiència al teu gust.'},{icon:'▣',t:'Multidispositiu',d:'Utilitza-ho des del mòbil o l\'ordinador.'}]"
@@ -98,7 +145,7 @@
                         <p class="mt-2 text-sm text-muted" x-text="f.d"></p>
                     </article>
                 </template></div>
-        </section>
+        </section><img src="/wave.jpg" alt="" class="h-60 w-full object-cover opacity-70">
         <section id="plans" class="mx-auto max-w-7xl scroll-mt-24 px-6 py-20">
             <div class="text-center">
                 <h2 class="text-3xl font-bold sm:text-4xl">Plans i preus</h2>
