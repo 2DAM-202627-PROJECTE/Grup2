@@ -56,6 +56,18 @@ npm run dev
 
 <img width="651" height="510" alt="image" src="https://github.com/user-attachments/assets/50deeb17-f24e-434f-bf7a-fbc7c523b62a" />
 
+## 📄 Pàgines de Sonora
+
+| Fitxer | Pàgina | Descripció |
+| --- | --- | --- |
+| `index.html` | Inici | Landing principal amb el mòbil de vinils i les funcionalitats. |
+| `about.html` | Sobre nosaltres | Informació del projecte i de l'equip. |
+| `funcionalitats.html` | Funcionalitats | Llista de funcions de l'app, amb filtres per categoria. |
+| `faq.html` | Preguntes freqüents | Dubtes habituals dels usuaris. |
+| `contactans.html` | Contacte | Formulari de contacte (demostratiu). |
+| `login.html` | Inici de sessió | Formulari d'accés (demostratiu). |
+| `register.html` | Registre | Formulari de registre (demostratiu). |
+| `politica_cookies.html` | Política de cookies | Informació legal sobre cookies. |
 
 ## 🧩 Funcionament de les plantilles (header i footer)
 
@@ -67,11 +79,12 @@ src/plantilles/footer.html
 El plugin d'includes del vite.config.js substitueix els comentaris <!-- include:header --> i <!-- include:footer --> pel contingut d'aquests fitxers abans de servir la pàgina. Així, un canvi al menú o al peu es veu a totes les pàgines alhora.
 
 ## 💻 Comandes utilitzades
-Comanda	            Descripció
-npm install	        Instal·la les dependències del projecte.
-npm run dev	        Inicia el servidor local de desenvolupament (HMR actiu).
-npm run build	      Compila el projecte per a producció a la carpeta dist/.
-npm run preview	    Mostra una vista prèvia local de la versió de producció.
+| Comanda | Descripció |
+| --- | --- |
+| `npm install` | Instal·la les dependències del projecte (Vite, Tailwind CSS v4 i Alpine.js). |
+| `npm run dev` | Inicia el servidor local de desenvolupament amb recàrrega instantània. |
+| `npm run build` | Compila el projecte per a producció a la carpeta `dist/`. |
+| `npm run preview` | Mostra una vista prèvia local de la versió compilada. |
 
 ## 📝 Notes
 Els formularis (login.html, register.html, contactans.html) són demostratius: mostren un missatge de confirmació, però no envien dades a cap servidor.
