@@ -21,6 +21,12 @@ npm run build
 npm run preview
 ```
 
+## Compilar per a desenvolupament
+
+```bash
+npm run dev
+```
+
 ## Estructura
 
 - `index.html`: landing principal.
