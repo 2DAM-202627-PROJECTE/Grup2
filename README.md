@@ -54,28 +54,8 @@ npm run dev
 
 ## 📁Estructura del projecte
 
-Grup2/
-├── node_modules/
-├── public/
-│   └── wave.jpg                # Recurs gràfic de la plantilla
-├── src/
-│   ├── assets/                 # Imatges (portades dels vinils, visuals…)
-│   ├── plantilles/
-│   │   ├── header.html         # Capçalera compartida
-│   │   └── footer.html         # Peu de pàgina compartit
-│   ├── main.js                 # Inicialització d'Alpine.js i comportaments interactius
-│   └── styles.css              # Tailwind CSS v4 i estils globals
-├── index.html                  # Landing principal
-├── about.html                  # Sobre nosaltres
-├── funcionalitats.html         # Funcionalitats de l'app
-├── faq.html                    # Preguntes freqüents
-├── contactans.html             # Contacte
-├── login.html                  # Inici de sessió
-├── register.html               # Registre
-├── politica_cookies.html       # Política de cookies
-├── package.json                # Dependències i scripts
-├── vite.config.js              # Vite + Tailwind + plugin d'includes
-└── README.md                   # Documentació del projecte
+<img width="651" height="510" alt="image" src="https://github.com/user-attachments/assets/50deeb17-f24e-434f-bf7a-fbc7c523b62a" />
+
 
 ## 🧩 Funcionament de les plantilles (header i footer)
 
@@ -85,6 +65,13 @@ src/plantilles/header.html
 src/plantilles/footer.html
 
 El plugin d'includes del vite.config.js substitueix els comentaris <!-- include:header --> i <!-- include:footer --> pel contingut d'aquests fitxers abans de servir la pàgina. Així, un canvi al menú o al peu es veu a totes les pàgines alhora.
+
+## 💻 Comandes utilitzades
+Comanda	            Descripció
+npm install	        Instal·la les dependències del projecte.
+npm run dev	        Inicia el servidor local de desenvolupament (HMR actiu).
+npm run build	      Compila el projecte per a producció a la carpeta dist/.
+npm run preview	    Mostra una vista prèvia local de la versió de producció.
 
 ## 📝 Notes
 Els formularis (login.html, register.html, contactans.html) són demostratius: mostren un missatge de confirmació, però no envien dades a cap servidor.
